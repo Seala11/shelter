@@ -1,0 +1,94 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/typography' as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 270px;
+  height: 435px;
+  border-radius: 9px;
+  background-color: $light-s;
+  transition: background-color 0.3s;
+
+  //safari fix slider
+  margin: 0 35px;
+
+  @supports (gap: 1px) {
+    margin: 0
+  }
+
+  @include media-laptop {   //safari fix slider
+    margin: 0 14px;
+
+    @supports (gap: 1px) {
+      margin: 0
+    }
+  }
+
+  @include media-tablet {   //safari fix slider
+    margin: 0 10px;
+
+    @supports (gap: 1px) {
+      margin: 0
+    }
+  }
+
+  &__image {
+    @include imageClear();
+    width: 270px;
+    height: 270px;
+  }
+
+  &__name {
+    @include georgia($fs: 1.25rem, $lh: 1.4rem);
+  }
+
+  .button {
+    margin-bottom: 29px;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: $light-xl;
+    box-shadow: $card-shadow;
+    .button {
+      border: 2px solid $primary-light;
+      background-color: $primary-light;
+    }
+  }
+}
+
+.katrine {
+  background-image: $katrine;
+}
+
+.jennifer {
+  background-image: $jennifer;
+}
+
+.woody {
+  background-image: $woody;
+}
+
+.sophia {
+  background-image: $sophia;
+}
+
+.timmy {
+  background-image: $timmy;
+}
+
+.charly {
+  background-image: $charly;
+}
+
+.scarlet {
+  background-image: $scarlet;
+}
+
+.freddy {
+  background-image: $freddy;
+}

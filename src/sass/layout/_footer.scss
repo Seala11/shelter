@@ -1,0 +1,135 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/typography' as *;
+
+.footer {
+  background: $gradien-background;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 40px;
+
+    @include media-laptop {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    @include media-tablet-large {
+      padding-top: 30px;
+    }
+  }
+
+  &__contacts {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 234px;
+    margin-top: 17px;
+
+    @include media-laptop {
+      width: 42%;
+      margin-top: 0;
+      padding: 0 20px 65px 20px;
+    }
+
+    @include media-tablet {
+      width: 90%;
+      height: 208px;
+      align-items: center;
+      padding-bottom: 40px;
+      justify-content: space-around;
+    }
+
+    @include media-mobile {
+      justify-content: space-between;
+    }
+  }
+
+  &__contacts:nth-of-type(2) {
+    padding-right: 24px;
+
+    .link {
+      padding-left: 42px;
+      width: 258px;
+
+      @include media-mobile {
+        text-align: inherit;
+      }
+    }
+
+    .link:last-child {
+      @include media-mobile {
+        margin-top: 14px;
+      }
+    }
+
+    @include media-tablet {
+      padding: 0;
+
+      & > .title {
+        width: 80%;
+
+        @include media-mobile {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__title {
+    @include georgia($fs: 2.188rem, $lh: 2.813rem, $color: $light-xl);
+    margin-top: 0;
+    margin-bottom: 0;
+
+    @include media-tablet {
+      @include georgia($fs: 25px, $lh: 32px, $color: $light-xl);
+    }
+  }
+
+  .link {
+    @include georgia($fs: 1.25rem, $lh: 1.438rem, $color: $primary);
+    @include imageClear($bs: initial, $bp: left center);
+    padding: 6px 0 6px 60px;
+
+    &__phone {
+      background-image: url('../assets/icons/icon-phone.svg');
+    }
+
+    &__email {
+      background-image: url('../assets/icons/icon-email.svg');
+    }
+
+    &__address {
+      background-image: url('../assets/icons/icon-marker.svg');
+    }
+
+    &__address--top {
+      margin-top: 21px;
+
+      @include media-tablet {
+        margin-top: 32px;
+      }
+    }
+  }
+
+  &__image {
+    @include imageClear();
+    background-image: url('../assets/images/footer-puppy.png');
+    width: 300px;
+    height: 310px;
+
+    @include media-tablet {
+      width: 260px;
+      height: 269px;
+      margin-top: 20px;
+    }
+
+    @include media-mobile {
+      margin-top: 53px;
+    }
+  }
+}

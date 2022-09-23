@@ -1,0 +1,67 @@
+@use '../abstracts/variables' as *;
+@use '../base/typography' as *;
+
+// $ff-georgia: 'Georgia Regular', serif;
+// $ff-arial: 'Arial Regular', sans-serif;
+// $ff-georgia-b: 'Georgia Bold', serif;
+
+// default made for h3 sections
+@mixin georgia($ff: $ff-georgia, $fs: 2.2rem, $fw: 400, $lh: 2.9rem, $color: $dark-l, $ls: 0.06em) {
+    font-family: $ff;
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+    letter-spacing: $ls;
+    color: $color; 
+  }
+
+// default for paragraph
+@mixin arial($fs: 1rem, $lh: 1.5rem, $color: $dark-xl, $ls: 0em) {
+    font-family: $ff-arial;
+    font-size: $fs;
+    font-weight: 400;
+    line-height: $lh;
+    letter-spacing: $ls;
+    color: $color; 
+}
+
+@mixin imageClear($bs: contain, $bp: center) {
+    background-repeat: no-repeat;
+    background-position: $bp;
+    background-size: $bs;
+}
+
+@mixin clearLink() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+@mixin transition() {
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.3s;
+}
+
+// media
+@mixin media-laptop {
+    @media (max-width: $content-width) { @content; }
+}
+
+@mixin media-tablet-large {
+    @media (max-width: $tablet-large-width) { @content; }
+}
+
+@mixin media-tablet {
+    @media (max-width: $tablet-width) { @content; }
+}
+
+@mixin media-mobile {
+    @media (max-width: $mobile-big-width) { @content; }
+}
+
+@mixin media-mobilesmall {
+    @media (max-width: $mobile-small-width) { @content; }
+}

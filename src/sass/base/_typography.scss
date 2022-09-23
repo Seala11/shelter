@@ -1,0 +1,30 @@
+/* georgia */
+@font-face {
+    font-family: 'Georgia Regular';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../assets/fonts/georgia/georgia-regular.ttf') format('truetype'),
+}
+
+// only used in pop up modal
+@font-face {
+  font-family: 'Georgia Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: local(''),
+       url('../assets/fonts/georgia/georgia-bold.ttf') format('truetype'),
+}
+
+/* arial */
+@font-face {
+    font-family: 'Arial Regular';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../assets/fonts/arial/arial-regular.ttf') format('truetype'),
+  }
+
+$ff-georgia: 'Georgia Regular', serif;
+$ff-georgia-b: 'Georgia Bold', serif;
+$ff-arial: 'Arial Regular', sans-serif;

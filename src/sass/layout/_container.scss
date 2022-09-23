@@ -1,0 +1,21 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @include media-laptop {
+    max-width: 93%;
+  }
+
+  // .pets & {
+  //   @include media-tablet-large {
+  //     max-width: 92%;
+  //   }
+
+  //   @include media-tablet {
+  //     max-width: 100%;
+  //   }
+  // }
+}

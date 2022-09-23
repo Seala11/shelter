@@ -1,0 +1,134 @@
+@use '../../abstracts/variables' as *;
+@use '../../abstracts/mixins' as *;
+@use '../../base/typography' as *;
+
+.donation {
+  background-color: $light-l;
+  padding-top: 47px;
+  padding-bottom: 88px;
+
+  @include media-tablet-large {
+    padding-bottom: 100px;
+  }
+
+  @include media-mobile {
+    padding-top: 42px;
+    padding-bottom: 10px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include media-tablet-large {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__image {
+    @include imageClear();
+    width: 505px;
+    height: 261px;
+    background-image: url('../assets/images/donation-dog.png');
+    margin-right: 28px;
+    margin-top: 22px;
+
+    @include media-tablet-large {
+      margin-right: 0;
+      margin-top: 47px;
+    }
+
+    @include media-tablet {
+      max-width: 504px;
+      width: 100%;
+    }
+
+    @include media-mobile {
+      margin-top: 0;
+      height: 197px;
+      max-width: 260px;
+    }
+  }
+
+  &__content {
+    width: 30%;
+    margin-right: 22px;
+
+    @include media-laptop {
+      width: max(380px, 40%);
+      margin: 0;
+    }
+
+    @include media-tablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @include media-mobile {
+      width: 100%;
+    }
+  }
+  &__card {
+    @include imageClear($bs: inherit, $bp: left 18px center);
+    background-image: url('../assets/icons/credit-card.svg');
+    background-color: $primary;
+    display: inline-block;
+    padding: 10px 15px 10px 60px;
+    border-radius: 9px;
+    text-decoration: none;
+    cursor: pointer;
+
+    &-number {
+      @include georgia($fs: 1.25rem, $lh: 1.438rem);
+      margin: 0;
+
+      @include media-tablet {
+        @include georgia($fs: 15px, $lh: 16px);
+        background-size: 28px;
+      }
+    }
+  }
+
+  &__info {
+    @include arial($fs: 0.75rem, $lh: 1.125rem, $color: $dark-m);
+    font-style: italic;
+    margin-top: 19px;
+
+    @include media-tablet {
+      text-align: justify;
+    }
+
+    @include media-mobile {
+      width: 94%;
+      margin-bottom: 16px;
+    }
+  }
+
+  .title {
+    @include media-tablet {
+      text-align: center;
+    }
+
+    @include media-mobile {
+      margin: 0 0 25px;
+    }
+
+    &--section {
+      margin-bottom: 0px;
+    }
+
+    &--subtitle {
+      margin-top: 16px;
+      margin-bottom: 21px;
+
+      @include media-mobile {
+        @include georgia($fs: 0.938rem, $lh: 1.063rem, $color: $dark-l, $ls: 0);
+        margin-top: 24px;
+        margin-bottom: 26px;
+      }
+    }
+  }
+}

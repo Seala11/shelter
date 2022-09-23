@@ -1,0 +1,88 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+%hamburger-line {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: $primary;
+  width: 100%;
+  height: 2px;
+}
+
+.hamburger {
+  display: none;
+  position: absolute;
+  width: 30px;
+  height: 22px;
+  z-index: 9999;
+  top: 50px;
+  right: 54px;
+  cursor: pointer;
+  transition: 350ms;
+
+  @include media-mobile {
+    top: 46px;
+  }
+
+  &:before {
+    @extend %hamburger-line;
+    top: 0;
+    left: 0;
+    // animation: rotate-right-2 350ms ease-in forwards;
+
+    .navbar__pets & {
+      background-color: $dark-l;
+    }
+  }
+  &:after {
+    @extend %hamburger-line;
+    bottom: 0;
+    left: 0;
+    // animation: rotate-right-2 350ms ease-in forwards;
+
+    .navbar__pets & {
+      background-color: $dark-l;
+    }
+  }
+
+  @include media-tablet {
+    display: block;
+  }
+
+  &--toggle-left {
+    animation: rotate-left 350ms ease-in forwards;
+  }
+
+  &--toggle-right {
+    animation: rotate-right 350ms ease-in forwards;
+  }
+
+  @keyframes rotate-left {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(90deg);
+    }
+  }
+
+  @keyframes rotate-right {
+    0% {
+      transform: rotate(90deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+}
+
+.hamburger__line {
+  @extend %hamburger-line;
+  top: calc(50% - 1px);
+  left: 0;
+
+  .navbar__pets & {
+    background-color: $dark-l;
+  }
+}

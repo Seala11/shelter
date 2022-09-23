@@ -1,0 +1,104 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/typography' as *;
+
+html {
+  scroll-behavior: smooth;
+  // overflow-x: hidden;
+}
+
+body {
+  color: $dark-xl;
+  font-family: $ff-arial;
+  background: $light-xl;
+  font-size: 1rem;
+  overflow-x: hidden;
+}
+
+.title {
+  @include georgia();
+
+  &--hero {
+    @include georgia($fs: 2.75rem, $lh: 3.6rem, $color: $light-xl, $ls: 0);
+    max-width: 80%;
+
+    @include media-laptop {
+      margin-top: 0;
+      align-self: flex-start;
+    }
+
+    @include media-tablet {
+      @include georgia($fs: 25px, $lh: 32px, $color: $light-xl, $ls: 0.06em);
+      align-self: center;
+      text-align: center;
+      max-width: 100%;
+    }
+
+    @include media-mobile {
+      max-width: 80%;
+      margin-bottom: 42px;
+      margin-top: 8px;
+    }
+  }
+
+  &--section {
+    @include georgia();
+
+    @include media-tablet {
+      @include georgia($fs: 25px, $lh: 32px);
+      text-align: center;
+      max-width: 100%;
+    }
+  }
+
+  // h5 section donation
+  &--subtitle {
+    @include georgia(
+      $fs: 0.938rem,
+      $lh: 1.063rem,
+      $color: $dark-l,
+      $ls: 0.06em
+    );
+  }
+}
+
+.list {
+  list-style: none;
+}
+
+.prevent-scroll {
+  overflow-y: hidden;
+}
+
+%overlay {
+  background-color: $overlay-dark;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  -webkit-transition: background-color 500ms linear;
+  -ms-transition: background-color 500ms linear;
+  transition: background-color 500ms linear;
+}
+
+.overlay--darken {
+  @include media-tablet {
+    background-color: $overlay-dark;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    -webkit-transition: background-color 500ms linear;
+    -ms-transition: background-color 500ms linear;
+    transition: background-color 500ms linear;
+  }
+}
+
+.overlay--darken-card {
+  @extend %overlay;
+  z-index: 99;
+}

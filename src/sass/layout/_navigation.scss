@@ -1,0 +1,143 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/typography' as *;
+
+.navbar {
+  display: flex;
+
+  .list {
+    display: flex;
+    margin-top: 2rem;
+
+    @include media-tablet {
+      position: fixed;
+      width: 320px;
+      min-height: 320px;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      height: 100vh;
+      z-index: 10;
+      padding: 0;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: $dark-3xl;
+      transform: translateX(100%);
+      animation: slide-out 350ms ease-in forwards;
+
+      &[data-visible='true'] {
+        animation: slide-in 350ms ease-in forwards;
+      }
+
+      @keyframes slide-in {
+        0% {
+          transform: translateX(100%);
+          opacity: 0.25;
+        }
+        100% {
+          transform: translateX(0%);
+          opacity: 1;
+        }
+      }
+
+      @keyframes slide-out {
+        0% {
+          transform: translateX(0%);
+          opacity: 1;
+        }
+        100% {
+          transform: translateX(100%);
+          opacity: 0.25;
+        }
+      }
+
+      .link {
+        font-size: 32px;
+      }
+    }
+
+    &__item {
+      list-style: none;
+      margin-left: 1.9rem;
+      margin-bottom: 1rem;
+
+      @include media-tablet {
+        margin-left: 0;
+        padding-bottom: 0;
+        padding-top: 0;
+
+        @media only screen and (min-height: 490px) {
+          padding-top: 29px;
+          padding-bottom: 10px;
+        }
+      }
+    }
+
+    &__item:nth-last-child(4) {
+      margin-left: 0;
+    }
+
+    &--hero {
+      margin-top: 2.375rem;
+      margin-bottom: 20px;
+
+      @include media-tablet {
+        margin: 0;
+      }
+    }
+
+    &--pets {
+      margin-top: 35px;
+
+      @include media-tablet {
+        margin-top: 0;
+        background-color: $light-xl;
+      }
+    }
+  }
+
+  &__logo {
+    display: block;
+    position: absolute;
+    top: 14px;
+    left: 4%;
+
+    &--hidden {
+      display: none;
+    }
+  }
+}
+
+.link {
+  text-decoration: none;
+  color: $dark-s;
+  @include transition();
+
+  &--active {
+    color: $light-s;
+    border-bottom: 3px solid $primary;
+    padding-bottom: 3px;
+  }
+
+  &:hover {
+    color: $light-s;
+  }
+}
+
+.navbar__pets {
+  .link {
+    text-decoration: none;
+    color: $dark-l;
+
+    &--active {
+      color: $dark-3xl;
+      border-bottom: 3px solid $primary;
+      padding-bottom: 3px;
+    }
+
+    &:hover {
+      color: $dark-3xl;
+    }
+  }
+}

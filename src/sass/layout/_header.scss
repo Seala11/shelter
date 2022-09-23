@@ -1,0 +1,96 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/typography' as *;
+
+.header {
+  &--main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 2.5rem;
+
+    @include media-laptop {
+      padding: 0.75rem 0.5rem 0 0.5rem;
+    }
+
+    @include media-tablet-large {
+      padding: 10px 0px 4px 4px;
+    }
+
+    @include media-mobile {
+      padding: 0.75rem 0.5rem 0 0rem;
+    }
+  }
+
+  &--pets {
+    padding: 12px 0 24px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $light-xl;
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      @include media-tablet {
+        margin: 0 25px;
+      }
+
+      @include media-mobile {
+        margin: 0 10px;
+      }
+    }
+  }
+
+  &--darken {
+    background-color: initial;
+  }
+
+  .logo {
+    margin-bottom: 5px;
+    transition: transform 350ms ease-in-out;
+    z-index: 99;
+
+    &__link {
+      text-decoration: none;
+    }
+
+    &__title {
+      margin: 16px 0 6px;
+    }
+
+    &__main {
+      @include georgia($fs: 2rem, $lh: 1.8rem, $color: $primary, $ls: 0.1rem);
+
+      &--subtitle {
+        @include arial($fs: 0.8rem, $lh: 1rem, $color: $light-xl, $ls: 0.09rem);
+      }
+    }
+
+    &__pets {
+      @include georgia($fs: 2rem, $lh: 1.8rem, $color: $dark-l, $ls: 0.1rem);
+
+      &--subtitle {
+        @include arial($fs: 0.8rem, $lh: 1rem, $color: $dark-3xl, $ls: 0.09rem);
+      }
+    }
+
+    &--transform {
+      @include media-tablet {
+        transform: translateX(calc(100vw - 338px));
+      }
+
+      @include media-mobile {
+        transform: translateX(calc(100vw - 324px));
+      }
+
+      @include media-mobilesmall {
+        transform: translateX(calc(100vw - 320px));
+      }
+    }
+  }
+}

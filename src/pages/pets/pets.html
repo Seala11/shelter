@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our pets</title>
+  </head>
+  <body>
+    <div class="overlay"></div>
+    <!-- navigation -->
+    <header class="header header--pets">
+      <div class="container">
+        <div class="logo">
+          <h1 class="logo__title">
+            <a class="logo__pets logo__link" href="index.html">Cozy House </a>
+          </h1>
+          <span class="logo__pets--subtitle">Shelter for pets in Boston</span>
+        </div>
+        <nav class="navbar navbar__pets">
+          <button
+            class="button__menu navbar__toggle hamburger"
+            aria-expended="false"
+          >
+            <span class="hamburger__line"></span>
+          </button>
+          <ul class="list list--pets" data-visible="false" data-page="pets">
+            <li class="list__item">
+              <a class="link" href="index.html">About the shelter</a>
+            </li>
+            <li class="list__item">
+              <a class="link link--active" href="pets.html">Our pets</a>
+            </li>
+            <li class="list__item">
+              <a class="link" href="index.html#help">Help the shelter</a>
+            </li>
+            <li class="list__item">
+              <a class="link" href="#contacts">Contacts</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- section pets -->
+    <div class="overlay-pets"></div>
+    <section class="pets" data-section="gallery">
+      <div class="container pets--pets-page">
+        <h3 class="title title--section">
+          Our friends who<br />
+          are looking for a house
+        </h3>
+        <div class="gallery">
+          <!-- cards goes here -->
+        </div>
+      </div>
+      <div class="gallery__navigation">
+        <button
+          class="button button__round button__round--start"
+        ></button>
+        <button
+          class="button button__round button__round--prev"
+        ></button>
+        <div class="gallery__page-number">1</div>
+        <button class="button button__round button__round--next"></button>
+        <button class="button button__round button__round--end"></button>
+      </div>
+    </section>
+
+    <!-- section contacts footer -->
+    <footer id="contacts" class="footer">
+      <div class="container footer__content">
+        <div class="footer__contacts">
+          <h3 class="title title--section footer__title">
+            For questions and suggestions
+          </h3>
+          <a
+            class="link link__email"
+            href="mailto:email@shelter.com"
+            target="_blank"
+            >email@shelter.com</a
+          >
+          <a class="link link__phone" href="tel:+136745677554" target="_blank"
+            >+13 674 567 75 54</a
+          >
+        </div>
+        <div class="footer__contacts">
+          <h3 class="title title--section footer__title">
+            We are waiting for your visit
+          </h3>
+          <a
+            class="link link__address link__address--top"
+            href="https://goo.gl/maps/uxLsGX7AH19bNqhPA"
+            target="_blank"
+            >1 Central Street, Boston (entrance from the store)
+          </a>
+          <br />
+          <a
+            class="link link__address"
+            href="https://goo.gl/maps/NoQbno68uLdBdJiZA"
+            target="_blank"
+            >18 South Park, London
+          </a>
+        </div>
+        <div class="footer__image"></div>
+      </div>
+    </footer>
+  </body>
+</html>

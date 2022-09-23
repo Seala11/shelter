@@ -1,0 +1,206 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.pets__slider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1200px;
+  padding-top: 22px;
+  padding-bottom: 62px;
+
+  @include media-laptop {
+    width: 708px;
+  }
+
+  @include media-tablet-large {
+    padding-top: 30px;
+  }
+
+  @include media-tablet {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 24px;
+    width: 320px;
+  }
+}
+
+.slider-wrapper {
+  width: 990px;
+  overflow: hidden;
+  width: 1000px;
+  margin: 0 20px;
+  overflow: hidden;
+
+  @include media-laptop {
+    margin: 0 12px;
+  }
+
+  @include media-tablet {
+    width: 270px;
+  }
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  position: relative;
+  left: -1080px;
+  margin: 0 20px; // fix for safari
+
+  @supports (gap: 1px) {
+    gap: 90px; // fix for safari
+    margin: 0;
+  }
+
+  @include media-laptop {
+    left: -616px;
+    margin: 0;
+
+    @supports (gap: 1px) {
+      gap: 40px; // fix for safari
+    }
+  }
+
+  @include media-tablet {
+    left: -308px;
+    margin: 0;
+  }
+
+  &__items {
+    display: flex;
+    margin: 0 10px; // fix for safari
+
+    @supports (gap: 1px) {
+      gap: 90px;
+      margin: 0;
+    }
+
+    @include media-laptop {
+      margin: 0 5px; // fix for safari
+
+      @supports (gap: 1px) {
+        gap: 40px;
+        margin: 0;
+      }
+    }
+
+    @include media-tablet {
+      margin: 0 3px; // fix for safari
+
+      @supports (gap: 1px) {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@keyframes transition-left-3 {
+  to {
+    left: 0;
+  }
+}
+
+@keyframes transition-left-2 {
+  to {
+    left: 4px;
+  }
+}
+
+@keyframes transition-left-1 {
+  to {
+    left: 2px;
+  }
+}
+
+@keyframes transition-right-3 {
+  to {
+    left: -2160px;
+  }
+}
+
+@keyframes transition-right-2 {
+  to {
+    left: -1235px;
+  }
+}
+
+@keyframes transition-right-1 {
+  to {
+    left: -618px;
+  }
+}
+
+// webkit
+
+@-webkit-keyframes transition-left-3 {
+  to {
+    left: 0;
+  }
+}
+
+@-webkit-keyframes transition-left-2 {
+  to {
+    left: 4px;
+  }
+}
+
+@-webkit-keyframes transition-left-1 {
+  to {
+    left: 2px;
+  }
+}
+
+@-webkit-keyframes transition-right-3 {
+  to {
+    left: -2160px;
+  }
+}
+
+@-webkit-keyframes transition-right-2 {
+  to {
+    left: -1235px;
+  }
+}
+
+@-webkit-keyframes transition-right-1 {
+  to {
+    left: -618px;
+  }
+}
+
+.transition-left-3 {
+  -webkit-animation: transition-left-3 1.5s ease-in-out;
+  -moz-animation: transition-left-3 1.5s ease-in-out;
+  animation: transition-left-3 1.5s ease-in-out;
+}
+
+.transition-left-2 {
+  -webkit-animation: transition-left-2 1s ease-in-out;
+  -moz-animation: transition-left-2 1s ease-in-out;
+  animation: transition-left-2 1s ease-in-out;
+}
+
+.transition-left-1 {
+  -webkit-animation: transition-left-1 0.5s ease-in-out;
+  -moz-animation: transition-left-1 0.5s ease-in-out;
+  animation: transition-left-1 0.5s ease-in-out;
+}
+
+.transition-right-3 {
+  -webkit-animation: transition-right-3 1.5s ease-in-out;
+  -moz-animation: transition-right-3 1.5s ease-in-out;
+  animation: transition-right-3 1.5s ease-in-out;
+}
+
+.transition-right-2 {
+  -webkit-animation: transition-right-2 1s ease-in-out;
+  -moz-animation: transition-right-2 1s ease-in-out;
+  animation: transition-right-2 1s ease-in-out;
+}
+.transition-right-1 {
+  -webkit-animation: transition-right-1 0.5s ease-in-out;
+  -moz-animation: transition-right-1 0.5s ease-in-out;
+  animation: transition-right-1 0.5s ease-in-out;
+}

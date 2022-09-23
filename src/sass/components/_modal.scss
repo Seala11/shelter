@@ -1,0 +1,142 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/typography' as *;
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 500px;
+  z-index: 999;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 9px;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
+
+  @include media-laptop {
+    width: 630px;
+    height: 350px;
+  }
+
+  // TODO: check that all cards fit
+  @include media-tablet {
+    width: 240px;
+    min-height: 340px;
+    height: fit-content;
+    background-image: none !important;
+  }
+
+  &__content {
+    max-width: 39%;
+    margin-left: auto;
+    padding: 15px 20px 15px 10px;
+
+    @include media-laptop {
+      max-width: 42%;
+      padding: 10px 3px 15px 10px;
+    }
+
+    @include media-tablet {
+      max-width: 92%;
+      padding: 10px 0 0 0;
+      margin: 0 auto;
+    }
+  }
+
+  &__title {
+    @include georgia($fs: 35px, $lh: 45px, $color: $dark-card);
+    margin-bottom: 0;
+    margin-top: 38px;
+
+    @include media-laptop {
+      margin-top: 0;
+    }
+
+    @include media-tablet {
+      text-align: center;
+    }
+  }
+
+  &__subtitle {
+    @include georgia($fs: 20px, $lh: 23px, $color: $dark-card);
+    margin-top: 10px;
+    margin-bottom: 40px;
+
+    @include media-laptop {
+      margin-bottom: 20px;
+    }
+
+    @include media-tablet {
+      text-align: center;
+    }
+  }
+
+  &__desc {
+    @include georgia($fs: 15px, $lh: 17px, $color: $dark-card);
+
+    @include media-laptop {
+      @include georgia($fs: 13px, $lh: 14px, $color: $dark-card);
+      margin-bottom: 18px;
+    }
+
+    @include media-tablet {
+      text-align: justify;
+      margin-bottom: 20px;
+    }
+
+    &--bold {
+      @include georgia(
+        $ff: $ff-georgia-b,
+        $fs: 15px,
+        $fw: 700,
+        $lh: 17px,
+        $color: $dark-card
+      );
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding-left: 10px;
+    margin-top: 39px;
+
+    @include media-laptop {
+      margin-top: 0;
+      padding-left: 15px;
+    }
+
+    @include media-tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__item {
+    @include georgia($fs: 15px, $lh: 17px, $color: $dark-card);
+    position: relative;
+    padding-bottom: 11px;
+
+    @include media-laptop {
+      padding-bottom: 6px;
+    }
+
+    &::before {
+      content: '\2022'; /* \2022 is the CSS Code/unicode for a bullet */
+      position: absolute;
+      top: 0;
+      right: 100%;
+      color: $primary;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+    }
+
+    &-desc {
+      @include georgia($fs: 15px, $lh: 17px, $color: $dark-card);
+      margin: 0;
+    }
+  }
+}

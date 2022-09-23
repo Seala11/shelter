@@ -1,0 +1,124 @@
+@use '../../abstracts/variables' as *;
+@use '../../abstracts/mixins' as *;
+@use '../../base/typography' as *;
+
+.help {
+  padding-bottom: 46px;
+
+  @include media-mobile {
+    padding-bottom: 10px;
+  }
+
+  .title {
+    padding-top: 45px;
+    text-align: center;
+
+    @include media-mobile {
+      padding-top: 19px;
+    }
+  }
+
+  &__content {
+    padding-top: 25px;
+
+    @include media-mobile {
+      padding-top: 18px;
+    }
+  }
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 0 10px;
+
+    @include media-mobile {
+      justify-content: space-between;
+      
+      margin: 0 20px;
+    }
+
+    @include media-mobilesmall {
+      margin: 0 6px;
+    }
+
+    &__item {
+      @include georgia($fs: 1.25rem, $lh: 1.4rem);
+      @include imageClear($bs: initial, $bp: top center);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      height: 113px;
+      white-space: nowrap;
+      margin: 0 60px 52px 60px;
+
+      @include media-tablet-large {
+        margin: 0 30px 54px 30px;
+      }
+
+      @include media-tablet-large {
+        width: 170px;
+      }
+
+      @include media-tablet {
+        @include georgia($fs: 15px, $lh: 16px);
+        margin: 0 10px 54px 10px;
+      }
+
+      @include media-mobile {
+        width: 130px;
+        margin: 0 0 31px 0;
+        background-position: center top;
+        background-size: 50px;
+        height: 86px;
+      }
+    }
+
+    &__food {
+      background-image: $food;
+    }
+
+    &__transport {
+      background-image: $transpor;
+    }
+
+    &__toys {
+      width: 60px;
+      background-image: $toys;
+
+      @include media-tablet-large {
+        width: 170px;
+      }
+
+      @include media-mobile {
+        width: 130px;
+        margin: 0;
+      }
+    }
+
+    &__bowls {
+      background-image: $bowls;
+    }
+
+    &__shampoos {
+      background-image: $shampoos;
+    }
+
+    &__vitamins {
+      background-image: $vitamins;
+    }
+
+    &__medicines {
+      background-image: $medicines;
+    }
+
+    &__collars {
+      background-image: $collars;
+    }
+
+    &__areas {
+      background-image: $areas;
+    }
+  }
+}

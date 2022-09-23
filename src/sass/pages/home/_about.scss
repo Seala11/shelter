@@ -1,0 +1,78 @@
+@use '../../abstracts/variables' as *;
+@use '../../abstracts/mixins' as *;
+@use '../../base/typography' as *;
+
+.about {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-bottom: 18px;
+
+  @include media-tablet-large {
+    flex-direction: column-reverse;
+    padding: 47px 0 31px;
+  }
+
+  @include media-mobile {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  &__image {
+    @include imageClear;
+    background-image: url('../assets/images/about-pets.png');
+    width: 300px;
+    height: 408px;
+    padding-top: 160px;
+    margin-left: 45px;
+
+    @include media-tablet-large {
+      padding-top: 132px;
+      margin-left: 0;
+    }
+
+    @include media-tablet {
+      width: 260px;
+      height: 354px;
+      padding-top: 54px;
+    }
+  }
+
+  &__content {
+    width: 36%;
+    padding-right: 46px;
+    padding-bottom: 16px;
+    padding-top: 29px;
+
+    @include media-tablet-large {
+      width: max(430px, 55%);
+      padding: 0;
+    }
+
+    @include media-mobile {
+      width: 90%;
+    }
+  }
+
+  &__text {
+    @include arial($fs: 0.938rem, $color: $dark-xl);
+    margin: 0;
+    padding: 13px 0;
+
+    @include media-tablet {
+      text-align: justify;
+    }
+  }
+
+  &__text:nth-of-type(1) {
+    padding-top: 24px;
+  }
+
+  .title--section {
+    margin: 0;
+
+    @include media-tablet-large {
+      margin-top: 31px;
+    }
+  }
+}
